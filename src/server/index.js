@@ -1,10 +1,11 @@
 const path = require('path')
 const express = require('express')
-const mockAPI = require('./mockAPI.js')
+const mockAPI = require('../../lib/mockAPI.js')
 const port = process.env.PORT;
 
 const app = express()
-const publicDirectoryPath=path.join(__dirname,'../client');
+// const publicDirectoryPath=path.join(__dirname,'../client');
+const publicDirectoryPath = './dist';
 
 app.use(express.static(publicDirectoryPath))
 
@@ -24,6 +25,7 @@ app.get('/sentiment', (req, res)=> {
             res.send(error);
         }
         else {
+            console.log(sentimentData);
             res.send(sentimentData);
         }
 
