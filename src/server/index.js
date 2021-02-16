@@ -2,13 +2,14 @@ const path = require('path')
 const express = require('express')
 const mockAPI = require('../../lib/mockAPI.js')
 const port = process.env.PORT;
+const cors = require('cors');
 
 const app = express()
 // const publicDirectoryPath=path.join(__dirname,'../client');
 const publicDirectoryPath = './dist';
 
 app.use(express.static(publicDirectoryPath))
-
+app.use(cors());
 
 
 app.get('/', function (req, res) {
@@ -18,8 +19,10 @@ app.get('/', function (req, res) {
 
 app.get('/sentiment', (req, res)=> {
     const textValue = req.query.textValue;
+    const contentType = req.query.contentType;
     console.log(textValue);
-    mockAPI(textValue,(error,{sentimentData}={})=>{
+    console.log(contentType);
+    mockAPI(textValue,contentType,(error,{sentimentData}={})=>{
         if(error)
         {   
             res.send(error);

@@ -1,13 +1,15 @@
-const $SCORE_TAG_VALUE = document.querySelector('#score_tag');
-const $AGREEMENT_VALUE = document.querySelector('#agreement');
-const $SUBJECTIVITY_VALUE = document.querySelector('#subjectivity');
-const $IRONY_VALUE = document.querySelector('#irony');
+const $SCORE_TAG_ELEMENT = document.querySelector('#score_tag');
+const $AGREEMENT_ELEMENT = document.querySelector('#agreement');
+const $SUBJECTIVITY_ELEMENT = document.querySelector('#subjectivity');
+const $IRONY_ELEMENT = document.querySelector('#irony');
+
 
 const updateUI = async(sentimentObject)=>{
-    $SCORE_TAG_VALUE.textContent = sentimentObject.scoreTag;
-    $AGREEMENT_VALUE.textContent = sentimentObject.agreement;
-    $IRONY_VALUE.textContent = sentimentObject.irony;
-    $SUBJECTIVITY_VALUE.textContent = sentimentObject.subjectivity;
+    Client.clearUI();
+    $SCORE_TAG_ELEMENT.textContent = sentimentObject.scoreTag;
+    $AGREEMENT_ELEMENT.textContent = sentimentObject.agreement;
+    $IRONY_ELEMENT.textContent = sentimentObject.irony;
+    $SUBJECTIVITY_ELEMENT.textContent = sentimentObject.subjectivity;
 
 }
 
