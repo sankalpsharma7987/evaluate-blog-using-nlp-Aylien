@@ -7,31 +7,33 @@ const getSentimentData =(e)=>{
     e.preventDefault();
     
     
-    if(Client.validateTextFields()==='txt')
-    {
-      Client.updateErrorUI('');
+    if(Client.validateTextFields()==='txt') {
+
+      Client.updateErrorUI('');// clearUI is not called with updateErrorUI as the updateUI function has call to the clearUI function.
       Client.fetchSentimentData($TEXT_VALUE.value,'txt').then(
         data=> Client.updateUI(data)
       )
 
     }
 
-    else if(Client.validateTextFields()==='url')
-    {
-      Client.updateErrorUI('');
+    else if(Client.validateTextFields()==='url') {
+
+      Client.updateErrorUI('');// clearUI is not called with updateErrorUI as the updateUI function has call to the clearUI function.
+
       Client.fetchSentimentData($URL_VALUE.value,'url').then(
         data=> Client.updateUI(data)
       )
-
+      
     }
 
-    else if(Client.validateTextFields()==='invalid'){
-      Client.clearUI('');
+    else if(Client.validateTextFields()==='invalid') {
+      Client.clearUI();
       Client.updateErrorUI('Cannot use both the fields');
       
     }
 
     else {
+      Client.clearUI();
       Client.updateErrorUI('Cannot leave both text and url empty')
     }
     
