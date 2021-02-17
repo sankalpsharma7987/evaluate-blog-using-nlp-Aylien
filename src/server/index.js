@@ -20,15 +20,14 @@ app.get('/', function (req, res) {
 app.get('/sentiment', (req, res)=> {
     const textValue = req.query.textValue;
     const contentType = req.query.contentType;
-    console.log(textValue);
-    console.log(contentType);
+    // console.log(textValue);
+    // console.log(contentType);
     mockAPI(textValue,contentType,(error,{sentimentData}={})=>{
         if(error)
         {   
             res.send(error);
         }
         else {
-            console.log(sentimentData);
             res.send(sentimentData);
         }
 
@@ -38,3 +37,5 @@ app.get('/sentiment', (req, res)=> {
 app.listen(port, function () {
     console.log(`Server is listening on port ${port}`)
 })
+
+module.exports = { app }

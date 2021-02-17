@@ -1,6 +1,5 @@
 const fetchSentimentData = async(textValue,contentType)=>{
     const response = await fetch(`http://localhost:8080/sentiment?textValue=${textValue}&contentType=${contentType}`);
-    console.log(response);
     try {
         const data = await response.json();
         return data;
@@ -10,4 +9,4 @@ const fetchSentimentData = async(textValue,contentType)=>{
     }
 }
 
-export {fetchSentimentData};
+module.exports = { fetchSentimentData };

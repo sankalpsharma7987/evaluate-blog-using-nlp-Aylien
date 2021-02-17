@@ -1,23 +1,20 @@
-const $TEXT_ELEMENT = document.querySelector('#sentimentText');
-const $URL_ELEMENT = document.querySelector('#sentimentUrl');
-
-const validateTextFields = ()=>{
-    if($TEXT_ELEMENT.value==="" && $URL_ELEMENT.value===""){
+const validateTextFields = (textValue,urlValue)=>{
+    if(textValue==="" && urlValue===""){
         return undefined;
     }
 
-    else if($TEXT_ELEMENT.value!=="" && $URL_ELEMENT.value==="") {
+    else if(textValue!=="" && urlValue==="") {
         return 'txt';
 
     }
-    else if($URL_ELEMENT.value!=="" && $TEXT_ELEMENT.value===""){
+    else if(urlValue!=="" && textValue===""){
         return 'url';
     }
 
-    else if($URL_ELEMENT.value!=""&& $TEXT_ELEMENT.value!==""){
+    else if(urlValue!=""&& textValue!==""){
         return 'invalid';
     }
 
 }
 
-export { validateTextFields };
+module.exports = { validateTextFields };

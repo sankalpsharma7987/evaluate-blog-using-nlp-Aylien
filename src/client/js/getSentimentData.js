@@ -7,7 +7,7 @@ const getSentimentData =(e)=>{
     e.preventDefault();
     
     
-    if(Client.validateTextFields()==='txt') {
+    if(Client.validateTextFields($TEXT_VALUE.value,$URL_VALUE.value)==='txt') {
 
       Client.updateErrorUI('');// clearUI is not called with updateErrorUI as the updateUI function has call to the clearUI function.
       Client.fetchSentimentData($TEXT_VALUE.value,'txt').then(
@@ -16,7 +16,7 @@ const getSentimentData =(e)=>{
 
     }
 
-    else if(Client.validateTextFields()==='url') {
+    else if(Client.validateTextFields($TEXT_VALUE.value,$URL_VALUE.value)==='url') {
 
       Client.updateErrorUI('');// clearUI is not called with updateErrorUI as the updateUI function has call to the clearUI function.
 
@@ -26,7 +26,7 @@ const getSentimentData =(e)=>{
       
     }
 
-    else if(Client.validateTextFields()==='invalid') {
+    else if(Client.validateTextFields($TEXT_VALUE.value,$URL_VALUE.value)==='invalid') {
       Client.clearUI();
       Client.updateErrorUI('Cannot use both the fields');
       

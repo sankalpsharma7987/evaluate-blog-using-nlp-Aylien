@@ -8,4 +8,3 @@ import {clearUI} from './js/lib/clearUI';
 
 
 export {fetchSentimentData,updateUI,getSentimentData,validateTextFields,updateErrorUI,clearUI};
-
