@@ -27,14 +27,17 @@ const getSentimentData =(e)=>{
     }
 
     else if(Client.validateTextFields($TEXT_VALUE.value,$URL_VALUE.value)==='invalid') {
+
       Client.clearUI();
       Client.updateErrorUI('Cannot use both the fields');
       
     }
 
     else {
+
       Client.clearUI();
       Client.updateErrorUI('Cannot leave both text and url empty')
+      
     }
     
 }
