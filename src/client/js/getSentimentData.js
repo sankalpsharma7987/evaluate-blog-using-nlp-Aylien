@@ -41,4 +41,4 @@ const getSentimentData =(e)=>{
 
 $SUBMIT_BUTTON.addEventListener('click',getSentimentData);
 
-export { getSentimentData };
+module.exports = { getSentimentData };
