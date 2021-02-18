@@ -1,7 +1,8 @@
-Evaluate Article or Blog
+Evaluate Article or Blog using MeaningCloud NLP
 
 Description
 This project is made with HTML, CSS and JavaScript, as part of the Udacity Front-Developer Nano-Degree Program.
+NLP API being used for this project is https://api.meaningcloud.com/sentiment-2.1
 
 General info
 The project required to build a page that takes URL for an article or blog to be evaluated by a third-party API. The third-party API used in this case is Meaning-Cloud that evaluates the sentiments associated with the content that is present in the article or blog. The project also required to use webpack to configure and manage the assets such as JavaScript and CSS files that are used in the project.

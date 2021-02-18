@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <meta charset="utf-8">
         <title>Test</title>
-        <!-- <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css"> -->
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+
     </head>
 
+    
     <body>
 
         <header>
+
             <div class="">
                 Logo
             </div>
+
             <div class="">
                 navigation
             </div>
+
         </header>
 
         <main>
+
             <section>
                 <!-- <form class="" onsubmit="return handleSubmit(event)"> -->
                     <textarea type="text" id="sentimentText" placeholder="Enter Your Text to Evaluate"></textarea>
@@ -32,19 +44,25 @@
             </section>
 
             <section>
+
                 <strong> Sentiment Results: </strong>
+
                 <div id="results">
                     <div id="score_tag"></div>
                     <div id="agreement"></div>
                     <div id="subjectivity"></div>
                     <div id="irony"></div>
                 </div>
+
                 <div id="error"></div>
+
             </section>
+
         </main>
 
         <footer>
             <p>This is a footer</p>
         </footer>
+        
     </body>
 </html>
